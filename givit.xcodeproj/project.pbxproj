@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		70F93DE62C0BA75800CF0953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F93DE52C0BA75800CF0953 /* AppDelegate.swift */; };
 		70F93DE82C0BA75800CF0953 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F93DE72C0BA75800CF0953 /* SceneDelegate.swift */; };
-		70F93DEA2C0BA75800CF0953 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F93DE92C0BA75800CF0953 /* ViewController.swift */; };
+		70F93DEA2C0BA75800CF0953 /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F93DE92C0BA75800CF0953 /* NewAccountViewController.swift */; };
 		70F93DED2C0BA75800CF0953 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 70F93DEC2C0BA75800CF0953 /* Base */; };
 		70F93DEF2C0BA75900CF0953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70F93DEE2C0BA75900CF0953 /* Assets.xcassets */; };
 		70F93DF22C0BA75900CF0953 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 70F93DF12C0BA75900CF0953 /* Base */; };
+		70F93DFF2C0BAFC300CF0953 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F93DFE2C0BAFC300CF0953 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		70F93DE22C0BA75800CF0953 /* givit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = givit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F93DE52C0BA75800CF0953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70F93DE72C0BA75800CF0953 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		70F93DE92C0BA75800CF0953 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		70F93DE92C0BA75800CF0953 /* NewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
 		70F93DEC2C0BA75800CF0953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		70F93DEE2C0BA75900CF0953 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70F93DF12C0BA75900CF0953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70F93DF32C0BA75900CF0953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70F93DFE2C0BAFC300CF0953 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +60,9 @@
 			children = (
 				70F93DF32C0BA75900CF0953 /* Info.plist */,
 				70F93DFD2C0BAA9000CF0953 /* controllers */,
+				70F93DFA2C0BAA6D00CF0953 /* storyboard */,
 				70F93DFC2C0BAA7D00CF0953 /* extra */,
 				70F93DFB2C0BAA7800CF0953 /* xib */,
-				70F93DFA2C0BAA6D00CF0953 /* storyboard */,
 				70F93DF92C0BAA6400CF0953 /* delegates */,
 			);
 			path = givit;
@@ -102,7 +104,8 @@
 		70F93DFD2C0BAA9000CF0953 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				70F93DE92C0BA75800CF0953 /* ViewController.swift */,
+				70F93DE92C0BA75800CF0953 /* NewAccountViewController.swift */,
+				70F93DFE2C0BAFC300CF0953 /* SignInViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -178,7 +181,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70F93DEA2C0BA75800CF0953 /* ViewController.swift in Sources */,
+				70F93DFF2C0BAFC300CF0953 /* SignInViewController.swift in Sources */,
+				70F93DEA2C0BA75800CF0953 /* NewAccountViewController.swift in Sources */,
 				70F93DE62C0BA75800CF0953 /* AppDelegate.swift in Sources */,
 				70F93DE82C0BA75800CF0953 /* SceneDelegate.swift in Sources */,
 			);
