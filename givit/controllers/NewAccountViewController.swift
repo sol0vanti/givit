@@ -28,8 +28,6 @@ class NewAccountViewController: UIViewController {
             return
         }
         
-        succeedError(label: errorLabel)
-        
         Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!) { (result, err) in
             if err != nil {
                 self.showError(text: "Error creating user!", errorLabel: self.errorLabel, textFields: [self.emailField, self.passwordField, self.passwordConfirmField])
@@ -37,10 +35,13 @@ class NewAccountViewController: UIViewController {
                 let db = Firestore.firestore()
                 db.collection("users").addDocument(data: ["email": "\(self.emailField.text!)",
                                                           "uid": result!.user.uid,
-                                                          "account_type": "user") { (error) in
+                                                          "account_creation_date": "\(Date().formatted())",
+                                                          "account_type": "user"]) { (error) in
                     if error != nil {
-                        self.showACError(text: "Failed to save data on Firebase server")
+                        self.showError(text: "Failed to save data on Firebase server", errorLabel: self.errorLabel, textFields: [self.emailField, self.passwordField, self.passwordConfirmField])
                         return
+                    } else {
+                        self.succeedError(label: self.errorLabel)
                     }
                 }
             }
