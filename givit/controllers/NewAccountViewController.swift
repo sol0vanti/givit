@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class NewAccountViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
@@ -27,10 +29,35 @@ class NewAccountViewController: UIViewController {
         }
         
         succeedError(label: errorLabel)
+        
+        Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!) { (result, err) in
+            if err != nil {
+                self.showError(text: "Error creating user!", errorLabel: self.errorLabel, textFields: [self.emailField, self.passwordField, self.passwordConfirmField])
+            } else {
+                let db = Firestore.firestore()
+                db.collection("users").addDocument(data: ["email": "\(self.emailField.text!)",
+                                                          "uid": result!.user.uid,
+                                                          "account_type": "user") { (error) in
+                    if error != nil {
+                        self.showACError(text: "Failed to save data on Firebase server")
+                        return
+                    }
+                }
+            }
+        }
     }
 }
 
 extension UIViewController {
+    func showError(text: String, errorLabel: UILabel, textFields: [UITextField]) {
+        errorLabel.isHidden = false
+        errorLabel.text = text
+        for field in textFields {
+            field.layer.borderColor = UIColor.systemRed.cgColor
+            field.layer.borderWidth = 1
+        }
+    }
+    
     func checkFieldsOnFill(textFields: [UITextField]?, errorLabel: UILabel) -> String? {
         var errorText: String? = nil
         
