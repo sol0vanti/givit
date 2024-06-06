@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sign In View Controller-->
+        <!--New Account View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="givit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NewAccountViewController" customModule="givit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nickname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GuZ-G7-loG">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GuZ-G7-loG">
                                 <rect key="frame" x="20" y="314" width="353" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -77,6 +77,9 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="createButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f0o-Zy-Q7q"/>
+                                </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdY-o7-kId">
                                 <rect key="frame" x="20" y="494" width="353" height="19.333333333333371"/>
@@ -115,6 +118,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7H1-NU-ScQ"/>
+                    <connections>
+                        <outlet property="createButton" destination="8g1-V2-dmz" id="GQC-Oe-D3t"/>
+                        <outlet property="emailField" destination="GuZ-G7-loG" id="7x2-x0-jlV"/>
+                        <outlet property="errorLabel" destination="sdY-o7-kId" id="Hq3-4f-DV2"/>
+                        <outlet property="passwordConfirmField" destination="Uvg-eL-Tgq" id="VTI-Ir-qdT"/>
+                        <outlet property="passwordField" destination="BLO-Gw-yRJ" id="bBh-8j-moC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -157,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="117" y="674"/>
         </scene>
-        <!--New Account View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="cpG-S4-ngr">
             <objects>
-                <viewController id="7cg-fE-8Ld" customClass="NewAccountViewController" customModule="givit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7cg-fE-8Ld" customClass="SignInViewController" customModule="givit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dam-Bb-6Ww">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,7 +187,7 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nickname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kjD-pb-6iY">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kjD-pb-6iY">
                                 <rect key="frame" x="20" y="314" width="353" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -238,6 +248,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vux-Ta-Bg0"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="kjD-pb-6iY" id="cZS-gS-3nR"/>
+                        <outlet property="errorLabel" destination="OgO-L9-Lju" id="KjR-DC-636"/>
+                        <outlet property="passwordTextField" destination="iHh-f6-e9S" id="JOL-Np-q5D"/>
+                        <outlet property="signInButton" destination="Y23-wR-pqq" id="aBG-co-JeN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R3k-eO-0L4" sceneMemberID="firstResponder"/>
             </objects>
