@@ -25,15 +25,14 @@ class NewAccountViewController: UIViewController {
         guard error == nil else {
             return
         }
-        errorLabel.textColor = .systemGreen
-        errorLabel.text = "Succeed"
-        errorLabel.isHidden = false
+        
+        succeedError(label: errorLabel)
     }
 }
 
 extension UIViewController {
     func checkFieldsOnFill(textFields: [UITextField]?, errorLabel: UILabel) -> String? {
-    var errorText: String? = nil
+        var errorText: String? = nil
         
         guard !textFields!.isEmpty else {
             errorText = "No text fields set!"
@@ -54,6 +53,12 @@ extension UIViewController {
         }
         
         return nil
+    }
+    
+    func succeedError(label: UILabel) {
+        label.textColor = .systemGreen
+        label.text = "Succeed"
+        label.isHidden = false
     }
 }
 
