@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignInViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
@@ -18,5 +19,21 @@ class SignInViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .systemRed
     }
     
-
+    @IBAction func signInButtonClicked(_ sender: UIButton) {
+        let checkFill = checkFieldsOnFill(textFields: [emailField, passwordField], errorLabel: errorLabel)
+        guard checkFill == nil else {
+            return
+        }
+        
+        let email = emailField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = passwordField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if error != nil {
+                self.showError(text: "Cannot sign in your account!", errorLabel: self.errorLabel, textFields: [self.emailField, self.passwordField])
+            }
+            else {
+                self.succeedError(label: self.errorLabel)
+            }
+        }
+    }
 }
