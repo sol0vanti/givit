@@ -212,7 +212,7 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Sign In">
+                                <buttonConfiguration key="configuration" style="filled" title="Submit">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
@@ -249,9 +249,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="vux-Ta-Bg0"/>
                     <connections>
-                        <outlet property="emailTextField" destination="kjD-pb-6iY" id="cZS-gS-3nR"/>
+                        <outlet property="emailField" destination="kjD-pb-6iY" id="fAK-2H-Ujd"/>
                         <outlet property="errorLabel" destination="OgO-L9-Lju" id="KjR-DC-636"/>
-                        <outlet property="passwordTextField" destination="iHh-f6-e9S" id="JOL-Np-q5D"/>
+                        <outlet property="passwordField" destination="iHh-f6-e9S" id="Y5Z-fv-cci"/>
                         <outlet property="signInButton" destination="Y23-wR-pqq" id="aBG-co-JeN"/>
                     </connections>
                 </viewController>
@@ -268,10 +268,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

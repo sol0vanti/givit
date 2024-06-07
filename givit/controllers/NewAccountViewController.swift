@@ -22,9 +22,9 @@ class NewAccountViewController: UIViewController {
     }
     
     @IBAction func createButtonClicked(_ sender: UIButton) {
-        print("Clicked")
-        let error = checkFieldsOnFill(textFields: [emailField, passwordField, passwordConfirmField], errorLabel: errorLabel)
-        guard error == nil else {
+        let checkFill = checkFieldsOnFill(textFields: [emailField, passwordField, passwordConfirmField], errorLabel: errorLabel)
+        let checkSimilarity = checkPasswordFieldsOnSimilarity(passwordField: passwordField, confirmField: passwordConfirmField, errorLabel: errorLabel)
+        guard checkFill == nil && checkSimilarity == nil else {
             return
         }
         
@@ -81,6 +81,25 @@ extension UIViewController {
         }
         
         return nil
+    }
+    
+    func checkPasswordFieldsOnSimilarity(passwordField: UITextField, 
+                                         confirmField: UITextField,
+                                         errorLabel: UILabel) -> String? {
+        var errorText: String? = nil
+        if passwordField.text == confirmField.text {
+            return nil
+        } else {
+            errorText = "Passwords do not match!"
+            errorLabel.isHidden = false
+            errorLabel.text = errorText
+            let fieldsArray = [passwordField, confirmField]
+            for field in fieldsArray {
+                field.layer.borderColor = UIColor.systemRed.cgColor
+                field.layer.borderWidth = 1
+            }
+            return errorText
+        }
     }
     
     func succeedError(label: UILabel) {
